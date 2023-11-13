@@ -31,7 +31,7 @@ ObliqueStrategies = function() {
       addListeners();
       display_random();
       $("body").addClass("one-strategy");
-      Display.random_bg();
+      Display.set_bg();
       if (!Helpers.localStorageSupported) {
         $("body").addClass("nolocalstorage");
       }
@@ -92,7 +92,7 @@ ObliqueStrategies = function() {
     $obstrat.text(current_strategy);
     random_font();
     center_strategy();
-    Display.random_bg();
+    Display.set_bg();
     fave_color_icon();
   },
   populate_faves = function() {
@@ -159,8 +159,9 @@ ObliqueStrategies = function() {
   };
 },
 Display = {
-  random_bg: function() {
-    $("body").css("background", Display.random_rgba());
+  set_bg: function() {
+    //$("body").css("background", Display.random_rgba());
+    $("body").css("background", "rgba(0,0,0,1.0)");
   },
   random_rgba: function() {
     var randr = Math.floor((Math.random()*255)+1),
